@@ -76,7 +76,7 @@ Route::get('user/{id}', function ($id) {
  * 説明: 複数のパラメータを受け取るルート。順番に変数として受け取ります。
  * 例: /product/electronics/456 にアクセスすると、$category='electronics', $id=456 となります。
  */
-Route::GET('product/{category}/product/{id}', function ($category, $id) {
+Route::GET('/product/{category}/product/{id}', function ($category, $id) {
     return view('product', [
         'category' => $category,  // カテゴリーパラメータをビューに渡す
         'id' => $id               // 商品IDパラメータをビューに渡す
