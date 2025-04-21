@@ -96,7 +96,7 @@ Route::GET('product/{category}/{id}', function ($category, $id) {
  * 例1: /blog/laravel-tips にアクセスすると、$post='laravel-tips' となります。
  * 例2: /blog にアクセスすると、$post=null となります。
  */
-Route::GET('blog/{post?}', function ($post = null) {
+Route::GET('blog/{post}', function ($post = null) {
     return view('blog', ['post' => $post]);  // オプショナルパラメータをビューに渡す
 })->name('blog');
 
@@ -110,7 +110,7 @@ Route::GET('blog/{post?}', function ($post = null) {
  *
  */
 
-Route::get('/blog/{post}/{name}/{message}', function (Request $request) {
+Route::post('/blog/{post?}', function (Request $request) {
     // 送信されたデータを取得 - Request::input() ではなく直接プロパティとしてアクセス
     $name = $request->name;
     $message = $request->message;
@@ -123,7 +123,7 @@ Route::get('/blog/{post}/{name}/{message}', function (Request $request) {
 })->name('message.submit');
 
 // メッセージ受付確認ページ
-Route::get('/message/received', function () {
+Route::post('/message/received', function () {
     // セッションからデータを取得
     $name = session('name');
     $message = session('message');
