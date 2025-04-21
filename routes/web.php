@@ -46,9 +46,9 @@ Route::get('/', function () {
  *
  * 説明: 最も基本的なルート定義。特定のURLに対して単一のビューを表示します。
  */
-// Route::xxx('xxx', function () {
-//     return view('about');  // resources/views/about.blade.phpを表示
-// })->name('about');
+Route::GET('/about', function () {
+    return view('about');  // resources/views/about.blade.phpを表示
+})->name('about');
 
 /**
  * 課題2: パラメータ付きGETルート
