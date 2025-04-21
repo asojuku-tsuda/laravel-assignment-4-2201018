@@ -96,9 +96,9 @@ Route::GET('product/{category}/{id}', function ($category, $id) {
  * 例1: /blog/laravel-tips にアクセスすると、$post='laravel-tips' となります。
  * 例2: /blog にアクセスすると、$post=null となります。
  */
-// Route::xxx('xxxx', function ($post = null) {
-//     return view('blog', ['post' => $post]);  // オプショナルパラメータをビューに渡す
-// })->name('blog');
+Route::GET('blog/{post?}', function ($post = null) {
+    return view('blog', ['post' => $post]);  // オプショナルパラメータをビューに渡す
+})->name('blog');
 
 /**
  * 課題5: POSTリクエスト（フォーム送信）
