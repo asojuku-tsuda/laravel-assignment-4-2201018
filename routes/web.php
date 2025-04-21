@@ -110,7 +110,7 @@ Route::GET('blog/{post}', function ($post = null) {
  *
  */
 
-Route::post('/blog/{name}/{message}', function (Request $request) {
+Route::post('/blog/{post,name}/{post,message}', function (Request $request) {
     // 送信されたデータを取得 - Request::input() ではなく直接プロパティとしてアクセス
     $name = $request->name;
     $message = $request->message;
