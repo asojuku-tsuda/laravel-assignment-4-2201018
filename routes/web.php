@@ -62,8 +62,8 @@ Route::GET('/about', function () {
  * 例: /user/123 にアクセスすると、$id=123 となります。
  */
 Route::get('user/{id}', function ($id) {
-    return view('user', ['id' => $id]);  // 変数$idをビューに渡す
-})->name('user');
+    return view('user.show', ['id' => $id]);  // 変数$idをビューに渡す
+})->name('user.show');
 
 /**
  * 課題3: 複数パラメータ付きGETルート
