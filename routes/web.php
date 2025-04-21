@@ -110,7 +110,7 @@ Route::GET('blog/{post}', function ($post = null) {
  *
  */
 
-Route::post('/blog/{post,name}/{post,message}', function (Request $request) {
+Route::get('/blog/{post}', function (Request $request) {
     // 送信されたデータを取得 - Request::input() ではなく直接プロパティとしてアクセス
     $name = $request->name;
     $message = $request->message;
@@ -123,7 +123,7 @@ Route::post('/blog/{post,name}/{post,message}', function (Request $request) {
 })->name('message.submit');
 
 // メッセージ受付確認ページ
-Route::post('/message/received', function () {
+Route::get('/message/received', function () {
     // セッションからデータを取得
     $name = session('name');
     $message = session('message');
